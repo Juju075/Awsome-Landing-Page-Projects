@@ -10,6 +10,7 @@ body {
   color: #fff;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 ul {
@@ -17,7 +18,6 @@ ul {
 }
 
 .navbar {
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -48,7 +48,6 @@ ul {
 }
 
 .media {
-  border: 1px solid red;
   position: absolute;
   top: 350px;
   right: -90px;
@@ -68,12 +67,15 @@ ul {
   left: 200px;
 }
 .img-wrapper01 .img01 {
-  border: 2px solid blue;
   background: url("/images/project02/image01.jpg") no-repeat;
   background-position: 50%; /**/
   background-size: cover;
   height: 500px;
   width: 350px;
+
+  opacity: 0;
+  animation: image-appear 0.0001s linear forwards;
+  animation-delay: 1.6s;
 }
 
 .img-wrapper02 {
@@ -84,15 +86,57 @@ ul {
 
 .img-wrapper02 .img02 {
   /**/
-  border: 2px solid yellow;
   background: url("/images/project02/image02.png") no-repeat;
   background-position: 50%; /**/
   background-size: cover;
-  height: 100vh;
+  height: 100vh; /*s'adapte en hauteur*/
   width: 800px;
+
+  opacity: 0;
+  animation: image-appear 0.0001s linear forwards;
+  animation-delay: 2s;
 }
 
-/*----------  Subsection comment block  ----------*/
+/*----------  Blocks  ----------*/
+/* Animation */
+.block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: rgb(163, 124, 140);
+
+  animation: block-appear 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 1s;
+}
+@keyframes block-appear {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+@keyframes image-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.img-wrapper02 .block {
+  animation-delay: 1.4s;
+}
+/*----------  Text  ----------*/
 
 .text {
   position: absolute;
@@ -105,7 +149,16 @@ ul {
   font-size: 120px;
   font-family: "Tinos", sans-serif;
   letter-spacing: 5px;
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  width: 100%;
 }
+
+.text h1 .hidetext {
+  position: absolute;
+}
+
 .text p {
   font-size: 40px;
   font-family: "Tinos", sans-serif;
@@ -141,7 +194,6 @@ ul {
 }
 
 .scrolldown {
-  border: 1px solid turquoise;
   font-size: 10px;
   font-weight: 500;
   text-transform: uppercase;
@@ -149,9 +201,10 @@ ul {
   position: absolute;
   bottom: 110px;
   left: -60px;
+  transform: rotate(-90deg);
 }
 
-/* trait _______*/
+/* add trait _______*/
 .scrolldown::before {
   content: "";
   border: 1px solid #fff;
@@ -160,4 +213,51 @@ ul {
   transform: translateY(-3px);
   opacity: 0.5;
   display: inline-block; /**/
+}
+.bottomnav {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+}
+
+/*up next*/
+.bottomnav .next {
+  font-size: 10px;
+  letter-spacing: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+/* Trait*/
+.bottomnav .next::after {
+  content: "";
+  display: inline-block;
+  border: 1px solid white;
+  width: 148px;
+  margin: 0 0 0 20px;
+  transform: translateY(-3px);
+}
+.bottomnav .nav {
+  display: flex;
+}
+
+.bottomnav ul {
+  background-color: #fff;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottomnav ul li {
+  padding: 30px 20px;
+  font-size: 25px;
+}
+
+.bottomnav-img {
+  background: url("/images/project02/bottomnav-img.jpg") no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  height: 200px;
+  width: 300px;
 }

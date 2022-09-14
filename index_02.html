@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desktop Integration - Image Animation</title>
     <link rel="stylesheet" href="./css/style02.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -44,13 +44,16 @@
 
        <div class="img-wrapper01">
             <div class="img01"></div>
-            </div>
+            <!-- Animation -->
+            <div class="block"></div>
+        </div>
         <div class="img-wrapper02">
-            <div class="igm02"></div>
+            <div class="img02"></div>
+            <div class="block"></div>
         </div>
     <div class="text">
-        <h1>The Great Escape</h1>
-        <p>Issue two out now</p>
+        <h1><span class="hidetext">The Great Escape</span></h1>
+        <p><span class="hidetext">Issue two out now</span></p>
     </div>
 
 
@@ -67,6 +70,19 @@
     scroll dow
 </div>
 
+<div class="bottomnav">
+    <div class="next">up next</div>
+    <div class="nav">
+        <ul>
+            <li><i class="fas fa-arrow-up"></i></li>
+            <li><i class="fas fa-arrow-down"></i></li>
+        </ul>
+        <!-- insert image -->
+        <div class="bottomnav-img"></div>
+    </div>
+</div>
+
+<script src="./js/script_02.js"></script>
        </div>
     </div>
 </body>
